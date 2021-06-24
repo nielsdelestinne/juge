@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SimpleTableComponent {
 
-  @Input() dataCollection: any[] | undefined
+  @Input() dataCollection: any[] | null = [];
 
   keys(element: any): any[] {
     return Object.keys(element);

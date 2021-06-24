@@ -116,7 +116,8 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "proxyConfig": "apps/client/proxy.conf.json"
+            "proxyConfig": "apps/client/proxy.conf.json",
+            "browserTarget": "client:build"
           }
         },
         "extract-i18n": {
@@ -140,6 +141,31 @@
           "options": {
             "jestConfig": "apps/client/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-access-api": {
+      "projectType": "library",
+      "root": "libs/data-access-api",
+      "sourceRoot": "libs/data-access-api/src",
+      "prefix": "juge",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access-api"],
+          "options": {
+            "jestConfig": "libs/data-access-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/data-access-api/src/**/*.ts",
+              "libs/data-access-api/src/**/*.html"
+            ]
           }
         }
       }
@@ -189,6 +215,31 @@
             "lintFilePatterns": [
               "libs/shell/src/**/*.ts",
               "libs/shell/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "type-api": {
+      "projectType": "library",
+      "root": "libs/type-api",
+      "sourceRoot": "libs/type-api/src",
+      "prefix": "juge",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/type-api"],
+          "options": {
+            "jestConfig": "libs/type-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/type-api/src/**/*.ts",
+              "libs/type-api/src/**/*.html"
             ]
           }
         }

@@ -5,5 +5,7 @@ module.exports = {
     '<rootDir>/libs/shell',
     '<rootDir>/libs/ui-table',
     '<rootDir>/apps/api',
+    '<rootDir>/libs/data-access-api',
+    '<rootDir>/libs/type-api',
   ],
 };

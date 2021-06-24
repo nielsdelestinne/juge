@@ -1,17 +1,11 @@
+$primary-color: #008ab6;
+
 :host {
   display: block;
   font-family: sans-serif;
   min-width: 300px;
   max-width: 600px;
   margin: 50px auto;
-}
-
-.gutter-left {
-  margin-left: 9px;
-}
-
-.col-span-2 {
-  grid-column: span 2;
 }
 
 .flex {
@@ -21,12 +15,37 @@
 }
 
 header {
-  background-color: #00516a;
+  background-color: $primary-color;
   color: white;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 0.5rem;
 }
 
 main {
   padding: 0 36px;
+}
+
+ul {
+  list-style: none;
+  background-color: #2f2f2f;
+  color: white;
+  padding: 1rem 0 1rem 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+  padding: 1rem;
+}
+
+li:hover {
+  background-color: $primary-color;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-active {
+  font-weight: bolder;
 }

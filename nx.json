@@ -25,11 +25,17 @@
     "client": {
       "tags": ["scope:juge"]
     },
+    "data-access-api": {
+      "tags": ["scope:juge"]
+    },
     "experiment-one": {
       "tags": ["scope:juge"]
     },
     "shell": {
       "tags": ["scope:juge"]
+    },
+    "type-api": {
+      "tags": []
     },
     "ui-table": {
       "tags": ["scope:juge"]

@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ApiService } from '@juge/data-access-api';
 
 @Component({
   selector: 'exp1-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss'],
+  styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent {
-  data = [
-    { name: 'Jim', familyName: 'Kazinski', birthYear: 1990 },
-    { name: 'Jim', familyName: 'Kazinski', birthYear: 1990 },
-    { name: 'Jim', familyName: 'Kazinski', birthYear: 1990 },
-  ];
+
+  cats$ = this.apiService.findAllCats_notOptimzed()
+
+  constructor(private apiService: ApiService) {
+  }
 }
