@@ -19,12 +19,21 @@
     }
   },
   "projects": {
+    "experiment-one": {
+      "tags": ["scope:juge"]
+    },
     "sandbox": {
-      "tags": []
+      "tags": ["scope:juge"]
     },
     "sandbox-e2e": {
-      "tags": [],
+      "tags": ["scope:juge"],
       "implicitDependencies": ["sandbox"]
+    },
+    "shell": {
+      "tags": ["scope:juge"]
+    },
+    "ui-table": {
+      "tags": ["scope:juge"]
     }
   }
 }

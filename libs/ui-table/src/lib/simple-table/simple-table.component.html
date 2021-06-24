@@ -1,0 +1,16 @@
+<table *ngIf='dataCollection'>
+  <thead>
+    <tr>
+      <th *ngFor="let heading of keys(dataCollection[0])">
+        {{ heading }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of dataCollection">
+      <td *ngFor="let elementAttributeKey of keys(element)">
+        {{ element[elementAttributeKey] }}
+      </td>
+    </tr>
+  </tbody>
+</table>
