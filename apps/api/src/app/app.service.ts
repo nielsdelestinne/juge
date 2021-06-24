@@ -3,7 +3,7 @@ import { Cat, Gender } from '@juge/type-api';
 
 @Injectable()
 export class AppService {
-  private cats = this.generateCats(50000);
+  private cats = this.generateCats(25000);
 
   getAllCats_notOptimized(): Cat[] {
     return this.cats;
