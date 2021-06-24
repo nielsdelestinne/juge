@@ -19,15 +19,14 @@
     }
   },
   "projects": {
+    "api": {
+      "tags": []
+    },
+    "client": {
+      "tags": ["scope:juge"]
+    },
     "experiment-one": {
       "tags": ["scope:juge"]
-    },
-    "sandbox": {
-      "tags": ["scope:juge"]
-    },
-    "sandbox-e2e": {
-      "tags": ["scope:juge"],
-      "implicitDependencies": ["sandbox"]
     },
     "shell": {
       "tags": ["scope:juge"]
