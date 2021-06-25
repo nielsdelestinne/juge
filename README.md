@@ -51,7 +51,7 @@ Complex and heavy database queries in the back-end
 
 ### Experiment 1
 
-**Given**
+#### Given
 
 - An API that returns a JSON array of 25k elements
   - Each element contains 4 fields with primitive values (including string)
@@ -64,7 +64,7 @@ Complex and heavy database queries in the back-end
 
 > Google Developer Tools > Performance: Profile `exp1_25k_40mbps.json` can be loaded in
 
-**Results**
+#### Results
 
 Total loading time of +-**4450ms** (until the results are shown on the page)
 - _That's a lot... given we only have 1.4Mb of JSON and 'only' 25k elements._
@@ -84,15 +84,26 @@ By increasing the size of elements (n) by a factor x we increase the total loadi
 - Not surprisingly as our Angular code contains a for-loop, thus there will be x-time more scripting and rendering te be performed.
 - Network download times will increase by factor x as well, as the JSON will become x-times bigger in size.
 
-**Conclusions**
+#### Conclusions
 
-The network request & response time are not the issue. 
+> The network request & response time are not the issue.
 - We can still reduce the download-time by compressing the JSON
-- We could easily reduce the amount of heavy (unnecessary) api calls by using ETags (and thus getting a very leightweight response back instead)
+    - Adding GZIP compression reduces the size of 1.4Mb to 64.5Kb (Size reduction of +- factor 20)
+    - TTFB is increased (x2): most likely due to the API having to compress the results before returning them
+    - Actual download time is around 20ms (15 times quicker)
+- We could easily reduce the amount of heavy (unnecessary) api calls by using ETags (and thus getting a very lightweight response back instead)
+  - Using the ETag response header & If-None-Match request header we enable caching
+  - After a first call is made and the result cached: the results are as follows:
+    - Network call to API: 42ms (TTFB: 37ms, content download: 5ms)
+- Google Developer Tools > Performance: Profile `exp1_25k_40mbps_caching_compression.json` can be loaded in
+
+> Execution of scripting (Angular code) is slow on big sets of data 
 
 A simple for-loop without any additional mapping, filtering or other operations is already leading 
 to execution times of 2 to 3 seconds.
 - 25k elements is a rather large amount, but the elements are of a flat and simple element type...
+
+> Browser rendering & painting is equally slow on big sets of data
 
 A rather big surprise was to find out how slow the browser rendering & painting was: 1.5 to 2 seconds. 
 - Plus, it has to fully wait for the scripting to be finished.
