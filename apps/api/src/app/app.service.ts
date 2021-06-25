@@ -1,25 +1,22 @@
-import { Injectable } from '@nestjs/common';
-import { Cat, Gender } from '@juge/type-api';
+import { Inject, Injectable } from '@nestjs/common';
+import { Cat, Order, Pageable } from '@juge/type-api';
 
 @Injectable()
 export class AppService {
-  private cats = this.generateCats(25000);
+
+  constructor(@Inject('cats') private cats: Cat[]) {}
 
   getAllCats_notOptimized(): Cat[] {
     return this.cats;
   }
 
-  private generateCats(amount = 50): Cat[] {
-    const cats: Cat[] = [];
-    for(let i = 0; i < amount; i++) {
-        cats.push({
-          name: 'Jim',
-          age: i,
-          isKeptIndoor: true,
-          gender: Gender.MALE
+  getAllCats_pageable(pageable: Pageable) {
+    return this.cats
+      .sort((aCat, otherCat) => aCat[pageable.orderBy].localeCompare(otherCat[pageable.orderBy]) * AppService.order(pageable.order))
+      .slice(pageable.page * pageable.size, pageable.page * pageable.size + pageable.size);
+  }
 
-        })
-    }
-    return cats;
+  private static order(order: Order): number {
+    return order === Order.ASC ? 1 : -1;
   }
 }

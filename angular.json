@@ -195,6 +195,31 @@
         }
       }
     },
+    "experiment-two": {
+      "projectType": "library",
+      "root": "libs/experiment-two",
+      "sourceRoot": "libs/experiment-two/src",
+      "prefix": "juge",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/experiment-two"],
+          "options": {
+            "jestConfig": "libs/experiment-two/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/experiment-two/src/**/*.ts",
+              "libs/experiment-two/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "shell": {
       "projectType": "library",
       "root": "libs/shell",

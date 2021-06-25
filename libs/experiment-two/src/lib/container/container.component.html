@@ -1,0 +1,29 @@
+<h2>Experiment Two</h2>
+
+<form [formGroup]="pageableForm">
+
+  <label for="page"> Page: </label>
+  <input id="page" type="number" formControlName="page">
+
+  <label for="size"> Size: </label>
+  <input id="size" type="number" formControlName="size">
+
+  <label for="orderBy"> Order by: </label>
+  <select id='orderBy' formControlName="orderBy">
+    <option [value]="'name'">name</option>
+    <option [value]="'age'">age</option>
+    <option [value]="'isKeptIndoor'">isKeptIndoor</option>
+    <option [value]="'gender'">gender</option>
+  </select>
+
+  <label for="order"> Order: </label>
+  <select id='order' formControlName="order">
+    <option [value]="0">ASC</option>
+    <option [value]="1">DESC</option>
+  </select>
+
+</form>
+
+<hr>
+
+<juge-ui-lazy-loading-table [dataCollection]='cats$ | async' (scrolledToBottom)='onScrolledToBottom()'></juge-ui-lazy-loading-table>

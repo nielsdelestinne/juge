@@ -31,6 +31,9 @@
     "experiment-one": {
       "tags": ["scope:juge"]
     },
+    "experiment-two": {
+      "tags": ["scope:juge"]
+    },
     "shell": {
       "tags": ["scope:juge"]
     },

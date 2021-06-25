@@ -1,0 +1,11 @@
+table {
+  border-collapse: collapse;
+  display: block;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+td, th {
+  border-bottom: #0a7100 1px solid !important;
+  padding: 1rem;
+}
