@@ -1,7 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 
 import { AppService } from './app.service';
-import { Cat } from '@juge/type-api';
+import { Cat, Order } from '@juge/type-api';
 
 @Controller()
 export class AppController {
@@ -10,5 +10,17 @@ export class AppController {
   @Get()
   getData(): Cat[] {
     return this.appService.getAllCats_notOptimized();
+  }
+
+  @Get('pageable')
+  getData_pageable(
+    @Query('page') page: number,
+    @Query('size') size: number,
+    @Query('orderBy') orderBy: string,
+    @Query('order') order: Order
+  ): Cat[] {
+    return this.appService.getAllCats_pageable({
+      page, size, orderBy, order
+    });
   }
 }
