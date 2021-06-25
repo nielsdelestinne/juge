@@ -36,7 +36,6 @@ export class LazyLoadingEagerDownloadingTableComponent implements OnDestroy {
     this.filterSubscription = this.nameFilter.valueChanges.subscribe(name => {
       const copyOfAllDate = [...this.allData];
       this.dataCollection = copyOfAllDate.filter((cat: Cat) => cat.name == name);
-      console.log(this.dataCollection);
     });
   }
 
