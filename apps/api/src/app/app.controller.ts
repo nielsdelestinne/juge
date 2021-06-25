@@ -9,7 +9,6 @@ export class AppController {
 
   @Get()
   getData(): Cat[] {
-    console.log('all cats');
     return this.appService.getAllCats_notOptimized();
   }
 
