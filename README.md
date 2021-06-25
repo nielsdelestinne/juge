@@ -1,6 +1,6 @@
 # Juge
 
-> Disclaimer: created during a hacktahon, thus hacky code :) 
+> Disclaimer: created during a hackathon, thus hacky code :) 
 
 How can we display huge amounts of data in the UI while still achieving high performance & without negatively impacting
 the user experience.
