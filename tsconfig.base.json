@@ -17,6 +17,7 @@
     "paths": {
       "@juge/data-access-api": ["libs/data-access-api/src/index.ts"],
       "@juge/experiment-one": ["libs/experiment-one/src/index.ts"],
+      "@juge/experiment-three": ["libs/experiment-three/src/index.ts"],
       "@juge/experiment-two": ["libs/experiment-two/src/index.ts"],
       "@juge/shell": ["libs/shell/src/index.ts"],
       "@juge/type-api": ["libs/type-api/src/index.ts"],

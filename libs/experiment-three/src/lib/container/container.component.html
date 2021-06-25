@@ -1,0 +1,7 @@
+<h2>Experiment Three</h2>
+
+<strong>{{size | number}}</strong> results prefetched and instantly shown. All other <strong>{{totalSize | number}}</strong> results downloaded & only shown on scroll.
+<hr>
+
+<juge-ui-lazy-loading-eager-downloading-table [dataCollectionAll]='catsAll$ | async' [dataCollection]='catsFirstPage$ | async'
+                            ></juge-ui-lazy-loading-eager-downloading-table>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { totalAmountOfCats } from '@juge/type-api';
 
 @Component({
   selector: 'juge-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'sandbox';
+  cats = totalAmountOfCats;
 }

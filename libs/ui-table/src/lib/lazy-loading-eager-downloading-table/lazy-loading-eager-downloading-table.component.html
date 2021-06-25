@@ -1,0 +1,23 @@
+<label for='nameFilter'>Filter on name: </label>
+<input id='nameFilter' type='text' [formControl]='nameFilter'>
+
+<hr>
+
+<div class="scrollable-table-container">
+  <table *ngIf="dataCollection">
+    <thead>
+      <tr>
+        <th *ngFor="let heading of keys(dataCollection[0])">
+          {{ heading }}
+        </th>
+      </tr>
+    </thead>
+    <tbody (scroll)='onTableScroll($event)'>
+      <tr *ngFor="let element of dataCollection">
+        <td *ngFor="let elementAttributeKey of keys(element)">
+          {{ element[elementAttributeKey] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

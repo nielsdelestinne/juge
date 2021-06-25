@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/data-access-api',
     '<rootDir>/libs/type-api',
     '<rootDir>/libs/experiment-two',
+    '<rootDir>/libs/experiment-three',
   ],
 };

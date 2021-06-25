@@ -11,6 +11,10 @@ const routes: Route[] = [
     path: 'experiment2',
     loadChildren: () => import('@juge/experiment-two').then((esModule) => esModule.ExperimentTwoModule),
   },
+  {
+    path: 'experiment3',
+    loadChildren: () => import('@juge/experiment-three').then((esModule) => esModule.ExperimentThreeModule),
+  },
 ]
 
 @NgModule({

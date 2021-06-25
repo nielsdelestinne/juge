@@ -1,16 +1,18 @@
-<header class="flex">
+<header>
   <h1>Welcome to <a routerLink=''>Juge</a>!</h1>
+  <p><strong>{{cats | number}}</strong> cats are waiting for you!</p>
 </header>
 
 <nav>
   <ul>
     <li><a routerLink='experiment1' routerLinkActive='nav-active'>Experiment 1</a></li>
     <li><a routerLink='experiment2' routerLinkActive='nav-active'>Experiment 2</a></li>
+    <li><a routerLink='experiment3' routerLinkActive='nav-active'>Experiment 3</a></li>
   </ul>
 </nav>
 
 <main>
-  <div class="flex">
+  <div class='flex'>
     <router-outlet></router-outlet>
   </div>
 </main>
