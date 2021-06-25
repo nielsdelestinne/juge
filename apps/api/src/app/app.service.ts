@@ -17,6 +17,6 @@ export class AppService {
   }
 
   private static order(order: Order): number {
-    return order === Order.ASC ? 1 : -1;
+    return Number(order) === Order.ASC ? 1 : -1;
   }
 }

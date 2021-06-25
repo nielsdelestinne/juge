@@ -1,5 +1,5 @@
 <div class="scrollable-table-container">
-  <table *ngIf="_dataCollection" (scroll)="onTableScroll($event)">
+  <table *ngIf="_dataCollection">
     <thead>
       <tr>
         <th *ngFor="let heading of keys(_dataCollection[0])">
@@ -7,7 +7,7 @@
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody (scroll)="onTableScroll($event)">
       <tr *ngFor="let element of _dataCollection">
         <td *ngFor="let elementAttributeKey of keys(element)">
           {{ element[elementAttributeKey] }}

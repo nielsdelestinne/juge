@@ -26,4 +26,8 @@ export class ContainerComponent {
     this.pageableForm.get('page')?.patchValue(this.pageableForm.get('page')?.value + 1)
     this.cats$ = this.apiService.findAllCats_pageable(this.pageableForm.value as Pageable);
   }
+
+  fetchData() {
+    this.cats$ = this.apiService.findAllCats_pageable(this.pageableForm.value as Pageable);
+  }
 }

@@ -4,7 +4,7 @@ export function generateCats(amount = 50): Cat[] {
   const cats: Cat[] = [];
   for(let i = 0; i < amount; i++) {
     cats.push({
-      name: 'Jim',
+      name: Math.abs(10 + (i % 26)).toString(36).toUpperCase() + "catoski" + i,
       age: i,
       isKeptIndoor: true,
       gender: Gender.MALE

@@ -1,3 +1,9 @@
 <h2>Experiment One</h2>
 
-<juge-ui-simple-table [dataCollection]='cats$ | async'></juge-ui-simple-table>
+<ng-container *ngIf='cats$ | async as cats else loading'>
+<juge-ui-simple-table [dataCollection]='cats'></juge-ui-simple-table>
+</ng-container>
+
+
+<ng-template #loading><h2>Loading ⌛...</h2></ng-template>
+

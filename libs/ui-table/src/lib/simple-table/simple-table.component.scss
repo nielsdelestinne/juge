@@ -1,8 +1,23 @@
 table {
   border-collapse: collapse;
+  width: 1024px;
+}
+
+thead {
+  width: 1024px;
+  display: block;
+  text-align: left
+}
+
+tbody {
+  width: 1024px;
+  display: block;
+  height: 500px;
+  overflow-y: scroll;
 }
 
 td, th {
-  border-bottom: #333333 1px solid !important;
+  border-bottom: #323232 1px solid !important;
   padding: 1rem;
+  width: 256px;
 }
