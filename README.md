@@ -5,6 +5,11 @@
 How can we display huge amounts of data in the UI while still achieving high performance & without negatively impacting
 the user experience.
 
+## Running apps
+Run the front-end: `nx serve client`
+
+Run the back-end: `nx serve api`
+
 ## Approach
 
 _more or less_
