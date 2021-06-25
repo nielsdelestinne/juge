@@ -31,6 +31,10 @@ Complex and heavy database queries in the back-end
 
 - Long time-gap between request & response
 
+Resource intensive scripting (loops,...) in the front-end code
+
+- Long time to render
+
 ## Experiments
 
 **When does a response object become too big?** How does compression help (a band aid solution or is it more)?
@@ -117,6 +121,23 @@ However, it will be interesting to see how we can...
 1. Limit the amount of data to process & render
 2. But, at the same time, do make all data already available in the client
     - Via a second call maybe?
-    
 
+### Experiment 2
+
+Lazy loading of data: classic approach
+
+See code, launch client & api and navigate to experiment 2
+- `nx serve client`
+- `nx serve api`
+
+### Experiment 3
+
+Eagerly load all data, but:
+- A subset of data is instantly loaded in via a separate call and rendered
+- All remaining data is eagerly loaded in via a separate call and kept in memory
+- Only upon scrolling (lazy loading) is additional data rendered
+
+See code, launch client & api and navigate to experiment 3
+- `nx serve client`
+- `nx serve api`
 
