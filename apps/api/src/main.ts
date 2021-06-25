@@ -13,8 +13,8 @@ async function bootstrap() {
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   app.enableCors();
-  configureCompression(app, false);
-  configureETags(app, false);
+  configureCompression(app, true);
+  configureETags(app, true);
   const port = process.env.PORT || 3333;
   await app.listen(port, () => {
     Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
